@@ -1,0 +1,62 @@
+### **SFDX Project + GitHub Setup Steps**
+**Save this as `sfdx_github_setup_steps.txt` in your `~/Downloads` folder.**
+
+```
+1. Install SFDX CLI (if not already installed)
+   - npm install -g @salesforce/cli
+
+2. Create a New SFDX Project
+   - mkdir my-sfdx-project && cd my-sfdx-project
+   - sfdx force:project:create -n MyProjectName
+
+3. Create a GitHub Repository
+   - gh repo create my-sfdx-repo --public
+   - (Or manually create a repo on GitHub and use `git remote add origin <url>`)
+
+4. Link to GitHub
+   - git init
+   - git add . && git commit -m "Initial commit"
+   - git remote add origin <remote-url>
+   - git push -u origin main
+
+5. Optional: Create .gitignore
+   - echo "node_modules/" >> .gitignore
+   - echo "sfdx-config.json" >> .gitignore
+   - echo "sfdx-project.json" >> .gitignore
+```
+
+---
+
+### **How to Save This File**
+1. **Copy the above content** (excluding the "Save this as..." line).
+2. Open a text editor (e.g., Notepad, VS Code, or any editor).
+3. Paste the content and save it as `sfdx_github_setup_steps.txt`.
+4. Move it to your `~/Downloads` folder manually.
+
+---
+
+### **Alternative: Use a Script (Unix/Linux/Mac)**
+If you're on a Unix-based system, you can run this command to save the file directly:
+
+```bash
+echo "1. Install SFDX CLI (if not already installed)
+   - npm install -g @salesforce/cli
+
+2. Create a New SFDX Project
+   - mkdir my-sfdx-project && cd my-sfdx-project
+   - sfdx force:project:create -n MyProjectName
+
+3. Create a GitHub Repository
+   - gh repo create my-sfdx-repo --public
+   - (Or manually create a repo on GitHub and use `git remote add origin <url>`)
+
+4. Link to GitHub
+   - git init
+   - git add . && git commit -m \"Initial commit\"
+   - git remote add origin <remote-url>
+   - git push -u origin main
+
+5. Optional: Create .gitignore
+   - echo \"node_modules/\" >> .gitignore
+   - echo \"sfdx-config.json\" >> .gitignore
+   - echo \"sfdx-project.json\" >> .gitignore" > ~/Downloads/sfdx_github_setup_steps.txt
