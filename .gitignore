@@ -1,0 +1,5 @@
+node_modules/
+sfdx-config.json
+sfdx-project.json
+server.key
+server.csr
