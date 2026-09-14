@@ -11,6 +11,11 @@ Phase 3's job: Read what Phase 2's producer is publishing.
         before a consumer can read anything, it has to explicitly tell Kafka which topic(s) it wants-- `consumer.subscribe(name_of_list)`
         this is the API's shape.
         A single consumer is able to subscribe to several topics at once.
+
+    Poll Loop
+        Producer was "fire and forget" -- call `produce()`, and it's done (well, queued).
+        Consumer works the opposite way. Must continously ask "anything new" -- `consumer.poll(timeout)`
+        - while True: `.poll(1.0)`, then checks whether something came back before deciding what to do next
 """
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
 from confluent_kafka import Consumer
@@ -23,3 +28,7 @@ config_dict = {
 topic_List = ["equipment-telemetry"]
 consumer = Consumer(config_dict)
 consumer.subscribe(topic_List)
+
+timeout = 1.0
+while True:
+    msg = consumer.poll(timeout)
