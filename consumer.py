@@ -43,4 +43,6 @@ while True:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
         telemetry_dict = json.loads(decoded_producer_msg)
+        if int(telemetry_dict["engine_temperature"]) >= 95:
+            #flag
         print(telemetry_dict["engine_temperature"]) #should print engine_temp value
