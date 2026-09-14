@@ -42,5 +42,5 @@ while True:
     else:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
-        config_JSON_map = json.loads(decoded_producer_msg)
-        print(config_JSON_map["engine_temperature"]) #should print engine_temp value
+        telemetry_dict = json.loads(decoded_producer_msg)
+        print(telemetry_dict["engine_temperature"]) #should print engine_temp value
