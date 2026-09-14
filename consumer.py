@@ -18,6 +18,7 @@ Phase 3's job: Read what Phase 2's producer is publishing.
         - while True: `.poll(1.0)`, then checks whether something came back before deciding what to do next
 """
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
+import json
 from confluent_kafka import Consumer
 
 groupId = 'telemetry-processor'
@@ -41,4 +42,5 @@ while True:
     else:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
-        print(decoded_producer_msg)
+        config_JSON_map = json.loads(decoded_producer_msg)
+        print(config_JSON_map[3]) #should print engine_temp value
