@@ -37,6 +37,6 @@ for i in range(10):
     producer.poll(0) #it only actually runs when the client processes its event queue, which happens inside poll() or flush()
     # above should be called after every produce() call to let callbacks fire incrementally
 
-    time.sleep(2)
+    time.sleep(0.5)
 
 producer.flush() #blocks until every queued message's callback has fired; this should ALWAYS come last

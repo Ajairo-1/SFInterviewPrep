@@ -43,4 +43,4 @@ while True:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
         config_JSON_map = json.loads(decoded_producer_msg)
-        print(config_JSON_map[3]) #should print engine_temp value
+        print(config_JSON_map["engine_temperature"]) #should print engine_temp value
