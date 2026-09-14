@@ -39,5 +39,6 @@ while True:
         err = msg.error()
         #print err
     else:
-        #process valid message
-        print(msg)
+        producer_message = msg.value() #returns bytes, not a Python string
+        decoded_producer_msg = producer_message.decode('utf-8')
+        print(decoded_producer_msg)
