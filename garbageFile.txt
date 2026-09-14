@@ -1,0 +1,16 @@
+from confluent_kafka import Producer
+import json
+
+config_dict = {
+  "bootstrap.servers": "localhost:9092"
+}
+telemetry_reading_dict = {
+  "equipment_Id": "12345678",
+  "engine_temperature": "67"
+}
+json.dumps(telemetry_reading_dict)
+producer = Producer(config_dict)
+producer.produce()
+
+docker exec kafka /opt/bin/kafka/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic <name> --partitions 1 --replication-factor 1
+
