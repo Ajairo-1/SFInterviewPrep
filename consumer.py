@@ -20,5 +20,6 @@ config_dict = {
     "bootstrap.servers": "localhost:9092",
     "group.id": groupId
 }
+topic_List = ["equipment-telemetry"]
 consumer = Consumer(config_dict)
-consumer.subscribe("equipment-telemetry")
+consumer.subscribe(topic_List)
