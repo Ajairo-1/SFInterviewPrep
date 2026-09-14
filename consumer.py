@@ -13,6 +13,6 @@ from confluent_kafka import Consumer
 groupId = 'telemetry-processor'
 config_dict = {
     "bootstrap.servers": "localhost:9092",
-    "group id": groupId
+    "group.id": groupId
 }
 consumer = Consumer(config_dict)
