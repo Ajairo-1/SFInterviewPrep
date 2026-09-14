@@ -29,6 +29,15 @@ topic_List = ["equipment-telemetry"]
 consumer = Consumer(config_dict)
 consumer.subscribe(topic_List)
 
+# Since this is a Consumer, and it must continously asks "anything for me yet?", a loop must be used
 timeout = 1.0
 while True:
     msg = consumer.poll(timeout)
+    if msg is None:
+        continue
+    elif msg.error():
+        err = msg.error()
+        #print err
+    else:
+        #process valid message
+        print(msg)
