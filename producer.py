@@ -27,7 +27,7 @@ for i in range(10):
     equipmentIDAsStr = random.choice(tractor_Id_List)
 
     telemetry_reading_dict = {
-      "equipment_Id": equipmentIDAsStr, #per execution, should auto-populate 8-digit string starting with 0000-0001
+      "equipment_Id": equipmentIDAsStr,
       "engine_temperature": engineTempAsStr
     }
 
