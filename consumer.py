@@ -16,6 +16,12 @@ Phase 3's job: Read what Phase 2's producer is publishing.
         Producer was "fire and forget" -- call `produce()`, and it's done (well, queued).
         Consumer works the opposite way. Must continously ask "anything new" -- `consumer.poll(timeout)`
         - while True: `.poll(1.0)`, then checks whether something came back before deciding what to do next
+
+
+    Phase 3: AWS side consumer
+        -add basic validation/anamoly flagging 
+            -?what am I validating?
+            -?what am I flagging?
 """
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
 import json
@@ -44,11 +50,11 @@ while True:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
         telemetry_dict = json.loads(decoded_producer_msg)
-        if int(telemetry_dict["engine_temperature"]) >= 95:
+        if int(telemetry_dict["engine_temperature"]) >= 85:
             #flag
             #✔ pass #REPLACE THIS LINE WITH ACTUAL RUNABLE CODE
             #✔ add to list of flagged temperatures
-            flagged_telems.__add__(telemetry_dict)
+            flagged_telems.append(telemetry_dict)
             # ✔print out equipment_Id and engine_temperature
             print(f"Flagged equipment and related temperature: {telemetry_dict}")
         print(telemetry_dict["engine_temperature"]) #should print engine_temp value
