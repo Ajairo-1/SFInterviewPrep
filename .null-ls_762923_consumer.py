@@ -22,18 +22,9 @@ Phase 3's job: Read what Phase 2's producer is publishing.
         -add basic validation/anamoly flagging 
             -?what am I validating?
             -?what am I flagging?
-
-        3. Forward result over HTTPS to Stug Endpoint
-        Rather than waiting until then to test any of this, use a public echo service in the meantime: 
-            https://httpbin.org/post 
-         accepts any POST request and echoes back exactly what it received — headers, body, everything — 
-         as its response. 
-         It's a genuinely useful tool to keep in your back pocket beyond just this project, any time you 
-         want to confirm a request is shaped correctly before you have a real server to point it at.
-         signature requests.post(url, json=some_dict)
 """
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
-import json, requests
+import json
 from confluent_kafka import Consumer
 
 flagged_telems = []
@@ -66,9 +57,6 @@ while True:
             flagged_telems.append(telemetry_dict)
             # ✔print out equipment_Id and engine_temperature
             print(f"Flagged equipment and related temperature: {telemetry_dict}")
-            # requests.post(url, json=some_dict)
-            # public echo service confirming if request is shaped correctly before using/having real server point to it
-            test_request = requests.post("https://httpbin.org/post", telemetry_dict)
         #print(telemetry_dict["engine_temperature"]) #should print engine_temp value
         #above should no longer be there due to what's inside the closest if block
-
+       

@@ -23,7 +23,7 @@ tractor_Id_List = [
 telemetry_reading_dict = {}
 producer = Producer(config_dict)
 for i in range(10):
-    engineTempAsStr = str(random.randint(60, 135))
+    engineTempAsStr = str(random.randint(60, 95))
     equipmentIDAsStr = random.choice(tractor_Id_List)
 
     telemetry_reading_dict = {
