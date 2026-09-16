@@ -21,6 +21,7 @@ Phase 3's job: Read what Phase 2's producer is publishing.
 import json
 from confluent_kafka import Consumer
 
+flagged_telems = []
 groupId = 'telemetry-processor'
 config_dict = {
     "bootstrap.servers": "localhost:9092",
@@ -45,5 +46,9 @@ while True:
         telemetry_dict = json.loads(decoded_producer_msg)
         if int(telemetry_dict["engine_temperature"]) >= 95:
             #flag
-            pass #REPLACE THIS LINE WITH ACTUAL RUNABLE CODE
+            #✔ pass #REPLACE THIS LINE WITH ACTUAL RUNABLE CODE
+            #✔ add to list of flagged temperatures
+            flagged_telems.__add__(telemetry_dict)
+            # ✔print out equipment_Id and engine_temperature
+            print(f"Flagged equipment and related temperature: {telemetry_dict}")
         print(telemetry_dict["engine_temperature"]) #should print engine_temp value
