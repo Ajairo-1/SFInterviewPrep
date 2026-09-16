@@ -47,7 +47,7 @@ consumer = Consumer(config_dict)
 consumer.subscribe(topic_List)
 
 # Since this is a Consumer, and it must continously asks "anything for me yet?", a loop must be used
-timeout = 1.0
+timeout = 0.2
 while True:
     msg = consumer.poll(timeout)
     if msg is None:
