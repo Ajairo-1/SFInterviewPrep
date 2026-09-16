@@ -69,7 +69,7 @@ while True:
             # requests.post(url, json=some_dict)
             # public echo service confirming if request is shaped correctly before using/having real server point to it
             test_request = requests.post("https://httpbin.org/post", json=telemetry_dict)
-            print(f"httpbin's echoed response in dict form: {telemetry_dict}")
+            print(f"POST response: {test_request.json()}")
         #print(telemetry_dict["engine_temperature"]) #should print engine_temp value
         #above should no longer be there due to what's inside the closest if block
 
