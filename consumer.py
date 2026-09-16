@@ -57,4 +57,6 @@ while True:
             flagged_telems.append(telemetry_dict)
             # ✔print out equipment_Id and engine_temperature
             print(f"Flagged equipment and related temperature: {telemetry_dict}")
-        print(telemetry_dict["engine_temperature"]) #should print engine_temp value
+        #print(telemetry_dict["engine_temperature"]) #should print engine_temp value
+        #above should no longer be there due to what's inside the closest if block
+
