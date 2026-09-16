@@ -45,4 +45,5 @@ while True:
         telemetry_dict = json.loads(decoded_producer_msg)
         if int(telemetry_dict["engine_temperature"]) >= 95:
             #flag
+            pass #REPLACE THIS LINE WITH ACTUAL RUNABLE CODE
         print(telemetry_dict["engine_temperature"]) #should print engine_temp value
