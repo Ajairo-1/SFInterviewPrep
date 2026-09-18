@@ -59,16 +59,18 @@ while True:
         producer_message = msg.value() #returns bytes, not a Python string
         decoded_producer_msg = producer_message.decode('utf-8')
         telemetry_dict = json.loads(decoded_producer_msg)
+        #json.loads()-> deserialize _ to Python_ob
+        #json.dumps()-> serialize obj to JSON formatted String
         if int(telemetry_dict["engine_temperature"]) >= 85:
             #flag
-            #✔ pass #REPLACE THIS LINE WITH ACTUAL RUNABLE CODE
-            #✔ add to list of flagged temperatures
             flagged_telems.append(telemetry_dict)
             # ✔print out equipment_Id and engine_temperature
             print(f"Flagged equipment and related temperature: {telemetry_dict}")
             # requests.post(url, json=some_dict)
             # public echo service confirming if request is shaped correctly before using/having real server point to it
-            test_request = requests.post("https://httpbin.org/post", json=telemetry_dict)
+            manual_test_str="https://httpbin.org/post"
+            aws_api_gateway_str="https://aorv4gw09f.execute-api.us-east-2.amazonaws.com/default/process-tractor-telemetry"
+            test_request = requests.post(aws_api_gateway_str, json=telemetry_dict)
             print(f"POST response: {test_request.json()}")
         #print(telemetry_dict["engine_temperature"]) #should print engine_temp value
         #above should no longer be there due to what's inside the closest if block
