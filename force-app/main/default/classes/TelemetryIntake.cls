@@ -12,5 +12,12 @@ global with sharing class TelemetryIntake {
   global static void receiveTelemetry(){
     Blob reqBodyBlob = RestContext.request.requestBody;
     String reqBodyStr = reqBodyBlob.toString();
+
+    TelemetryWrapper telem = (TelemetryWrapper)JSON.deserialize(reqBodyStr, TelemetryWrapper.class);
+  }
+
+  private class TelemetryWrapper {
+    public String equipment_Id;
+    public String engine_temperature;
   }
 }
