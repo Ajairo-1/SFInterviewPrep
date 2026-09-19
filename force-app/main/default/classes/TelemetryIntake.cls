@@ -14,6 +14,28 @@ global with sharing class TelemetryIntake {
     String reqBodyStr = reqBodyBlob.toString();
 
     TelemetryWrapper telem = (TelemetryWrapper)JSON.deserialize(reqBodyStr, TelemetryWrapper.class);
+
+    /*
+
+      The only genuinely new step is the publish call itself: EventBus.publish(), 
+      which takes the event instance and returns a Database.SaveResult — the same result type Database.insert() gives you, so checking .isSuccess() should feel familiar.
+      
+      Construct a new EquipmentTelemetry__e(...), setting both fields from telem's values.
+      Publish it with EventBus.publish(...), capturing the result.
+    */
+    // ✔Construct a Platform Event record
+    EquipmentTelemetry__e telemEvent = new EquipmentTelemetry__e(
+      Equipment_Id__c = telem.equipment_Id, 
+      Engine_Temperature__c = telem.engine_temperature
+    );
+    // call the EventBus.publish() method. This takes an event instance & returns a Database.SaveResult
+    Database.SaveResult result = EventBus.publish(telemEvent);
+    // check result.isSuccess(). -> what to do if so? if not? return messages?
+    if(result.isSuccess()){
+      //do something;
+    } else{
+      //else-do something;
+    }
   }
 
   private class TelemetryWrapper {

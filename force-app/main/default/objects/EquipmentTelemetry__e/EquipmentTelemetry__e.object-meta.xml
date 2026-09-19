@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <fullName>EquipmentTelemetry__e</fullName>
+    <pluralLabel>Equipment Telemetrys</pluralLabel>
+    <description>Equipment System with equipmentId and engineTemperature</description>
+    <publishBehavior>PublishImmediately</publishBehavior>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <eventType>HighVolume</eventType>
+    <label>Equipment Telemetry</label>
+</CustomObject>

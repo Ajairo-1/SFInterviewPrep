@@ -50,3 +50,6 @@ $RECYCLE.BIN/
 # Local secrets
 server.key
 server.csr
+
+# Other
+curlSFRestCall.txt

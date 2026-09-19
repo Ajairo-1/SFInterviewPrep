@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Equipment_Id__c</fullName>
+    <type>Text</type>
+    <length>255</length>
+    <required>false</required>
+    <description>Identifier for each Equipment for the company.</description>
+    <label>Equipment Id</label>
+    <securityClassification>Internal</securityClassification>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Engine_Temperature__c</fullName>
+    <type>Text</type>
+    <length>255</length>
+    <required>false</required>
+    <unique>false</unique>
+    <description>Temperature for the related Engine.</description>
+    <label>Engine Temperature</label>
+    <securityClassification>Internal</securityClassification>
+</CustomField>
