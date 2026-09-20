@@ -34,7 +34,9 @@ global with sharing class TelemetryIntake {
     if(result.isSuccess()){
       //do something;
     } else{
-      // create Log__c object and populated neccessary fields. Should be dynamic.
+      //500: Internal Service Error
+      RestContext.response.statusCode = 500;
+      // create Log__c object and populated neccessary fields. Should be dynamic for later on.
       Log__c errorLog = new Log__c(
         Category__c = 'Event Publish Failure',
         Message__c = result.getErrors()[0].getMessage(),
