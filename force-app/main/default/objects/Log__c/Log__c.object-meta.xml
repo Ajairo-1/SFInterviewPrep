@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject>
+    <pluralLabel>Logs</pluralLabel>
+    <fullName>Log__c</fullName>
+    <description>Object for historical tracking of successes and failures.</description>
+    <nameField>
+        <label>Log Name</label>
+        <type>Text</type>
+    </nameField>
+    <enableBulkApi>true</enableBulkApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <enableHistory>true</enableHistory>
+    <enableActivities>true</enableActivities>
+    <enableSearch>true</enableSearch>
+    <enableFeeds>true</enableFeeds>
+    <enableReports>true</enableReports>
+    <sharingModel>ReadWrite</sharingModel>
+    <label>Log</label>
+    <deploymentStatus>Deployed</deploymentStatus>
+</CustomObject>

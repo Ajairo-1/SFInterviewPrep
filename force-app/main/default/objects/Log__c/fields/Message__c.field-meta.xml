@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Message__c</fullName>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+    <length>131072</length>
+    <inlineHelpText/>
+    <description>Captures the returned value based of success/failure.</description>
+    <label>Message</label>
+    <securityClassification>Internal</securityClassification>
+</CustomField>

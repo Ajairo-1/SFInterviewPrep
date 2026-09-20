@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Category__c</fullName>
+    <type>Picklist</type>
+    <inlineHelpText/>
+    <required>false</required>
+    <description>Describes the bucket this related process should fall into.</description>
+    <label>Category</label>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+              <fullName>Event Publish Failure</fullName>
+              <default>true</default>
+            </value>
+            <value>
+              <fullName>Deserilizatoin Error</fullName>
+              <default>false</default>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <securityClassification>Internal</securityClassification>
+</CustomField>

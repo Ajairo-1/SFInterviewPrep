@@ -34,7 +34,14 @@ global with sharing class TelemetryIntake {
     if(result.isSuccess()){
       //do something;
     } else{
-      //else-do something;
+      // create Log__c object and populated neccessary fields. Should be dynamic.
+      Log__c errorLog = new Log__c(
+        Category__c = 'Event Publish Failure',
+        Message__c = result.getErrors()[0].getMessage(),
+        Payload__c = reqBodyStr,
+        Source__c = 'ApexClass: TelemetryIntake.receiveTelemetry()'
+      );
+      insert errorLog;
     }
   }
 

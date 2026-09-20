@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField>
+    <fullName>Source__c</fullName>
+    <type>Text</type>
+    <length>255</length>
+    <inlineHelpText/>
+    <required>false</required>
+    <unique>false</unique>
+    <externalId>false</externalId>
+    <description>Describes the Source of related process.</description>
+    <label>Source</label>
+    <securityClassification>Internal</securityClassification>
+</CustomField>
